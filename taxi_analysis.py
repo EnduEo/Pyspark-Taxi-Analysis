@@ -103,7 +103,9 @@ positive_total_df = top10_percent_df.filter(top10_percent_df["total_amount"] > 0
 # %%
 positive_total_df.describe('total_amount').show() #Stats 
 #Total amount might be affected buy outliers as the maximum value is way higher than the avg, so we could filter out if needed.
-#Next block is OPTIONAL because high amount might be reasonable with the trip distance(but trip distance values are really high so they could be incorrect)
+
+# %% [markdown]
+# ###### Next block is OPTIONAL because high amount might be reasonable with the trip distance(but trip distance values are really high so they could be incorrect)
 
 # %%
 avg = positive_total_df.agg(mean("total_amount"))
@@ -121,8 +123,5 @@ cleaned_df = positive_total_df.filter(
 
 # %%
 cleaned_df.describe('total_amount').show()
-
-# %%
-cleaned_df.show()
 
 
